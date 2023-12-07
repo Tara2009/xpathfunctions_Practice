@@ -29,6 +29,7 @@ Open wordpress website
     ${lprecesib}=          GetText                     //td[text()\='Germany']/preceding-sibling::td/child::input
     ${lchildt}=            GetText                     //table[@id\='contactList']/child::tbody/child::tr/child::td[4]
     ${lparent}=            GetText                     //td[text()\='Helen Bennett']/parent::tr
+    ${lancest}=            GetText                     //td[text()\='Helen Bennett']/ancestor::div
     Log                    ${headertext}
     Log                    ${headertext1}
     Log                    ${WText}
@@ -41,6 +42,7 @@ Open wordpress website
     Log                    ${lprecesib}
     Log                    ${lchildt}
     Log                    ${lparent}
+    Log                    ${lancest}
 
     Run Keyword If         '${headertext}'=='True'     Test Keyword 1
     ...                    ELSE                        Test keyword 2
