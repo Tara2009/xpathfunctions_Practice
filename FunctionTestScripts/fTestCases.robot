@@ -21,13 +21,15 @@ Open wordpress website
     ${WText}=           GetText    //a[text()\='Sign in']
     ${scontain}=        GetText    //a[contains(text(),'account')]
     ${sstartwith}=       GetText    //a[starts-with(text(),'Sign in into')]
-    ${snormlize}=       GetText     //label[normalize-space(text())='First Name']   # Remove front and back spaces
+    ${snormlize}=       GetText     //label[normalize-space(text())='First Name']   # Remove front and back spaces  
+    ${slast}=           GetText     (//table[@id='contactList']/tbody/tr)[last()]   # Return last row of the table
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
     Log               ${scontain}
     Log               ${sstartwith}
     Log               ${snormlize}
+    Log               ${slast}
     
     Run Keyword If    '${headertext}'=='True'    Test Keyword 1
     ...               ELSE                        Test keyword 2
