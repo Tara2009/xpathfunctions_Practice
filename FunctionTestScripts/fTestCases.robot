@@ -19,9 +19,11 @@ Open wordpress website
     ${headertext}=      IsElement    //h1[@class\='post-title entry-title']
     ${headertext1}=      IsElement    //h1[@class\='post-title entry-title1']
     ${WText}=           GetText    //a[text()\='Sign in']
+    ${scontain}=        GetText    //a[contains(text(),'account')]
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
+    Log               ${scontain}
     
     Run Keyword If    '${headertext}'=='True'    Test Keyword 1
     ...               ELSE                        Test keyword 2
