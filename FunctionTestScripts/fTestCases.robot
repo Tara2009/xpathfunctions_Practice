@@ -26,7 +26,7 @@ Open wordpress website
     ${lpostion}=        GetText     (//table[@id\='contactList']/tbody/tr)[position()\=2]  #It works same as index with different condition
     TypeText            //label[text()\='Email']/following-sibling::input[@type\='text']            tarasrinivas@gmail.com
     ${lfolsibling_par}    GetText       //label[text()\='Email']/following-sibling::input[@type\='text']  #Here 'Email' is the parent tag element and following sibling is the input tag (Here input is the tag)
-    ${lprecesib}        GetText        //td[text()='Germany']/preceding-sibling::td/child::input
+    ${lprecesib}        GetText        //td[text()\='Germany']/preceding-sibling::td/child::input
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
