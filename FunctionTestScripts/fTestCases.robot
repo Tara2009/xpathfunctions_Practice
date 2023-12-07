@@ -24,7 +24,7 @@ Open wordpress website
     ${snormlize}=       GetText     //label[normalize-space(text())\='First Name']   # Remove front and back spaces  
     ${slast}=           GetText     (//table[@id\='contactList']/tbody/tr)[last()]   # Return last row of the table
     ${lpostion}=        GetText     (//table[@id\='contactList']/tbody/tr)[position()\=2]  #It works same as index with different condition
-    ${lfolsibling_par}    GetText       //label[text()='Email']/following-sibling::input[@type='text']  #Here 'Email' is the parent tag element and following sibling is the input tag (Here input is the tag)
+    ${lfolsibling_par}    GetText       //label[text()\='Email']/following-sibling::input[@type\='text']  #Here 'Email' is the parent tag element and following sibling is the input tag (Here input is the tag)
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
