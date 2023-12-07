@@ -25,8 +25,9 @@ Open wordpress website
     ${slast}=           GetText     (//table[@id\='contactList']/tbody/tr)[last()]   # Return last row of the table
     ${lpostion}=        GetText     (//table[@id\='contactList']/tbody/tr)[position()\=2]  #It works same as index with different condition
    # TypeText            //label[text()\='Email']/following-sibling::input[@type\='text']            tarasrinivas@gmail.com
-    ${lfolsibling_par}    GetText       //label[text()\='Email']/following-sibling::input[@type\='text']  #Here 'Email' is the parent tag element and following sibling is the input tag (Here input is the tag)
-    ${lprecesib}        GetText        //td[text()\='Germany']/preceding-sibling::td/child::input
+    ${lfolsibling_par}=    GetText       //label[text()\='Email']/following-sibling::input[@type\='text']  #Here 'Email' is the parent tag element and following sibling is the input tag (Here input is the tag)
+    ${lprecesib}=        GetText        //td[text()\='Germany']/preceding-sibling::td/child::input
+    ${lchildt}=          GetText        //table[@id='contactList']/child::tbody/child::tr/child::td[4]
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
