@@ -18,7 +18,7 @@ Open wordpress website
     # Verifying component is available in the page or not, if available return True or if not available return false
     ${headertext}=      IsElement    //h1[@class\='post-title entry-title']
     ${headertext1}=      IsElement    //h1[@class\='post-title entry-title1']
-    #${WText}=           GetText    //a[text()='Sign in']
+    ${WText}=           GetText    //a[text()='Sign in']
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
