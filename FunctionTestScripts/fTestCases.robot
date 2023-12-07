@@ -30,6 +30,7 @@ Open wordpress website
     ${lchildt}=            GetText                     //table[@id\='contactList']/child::tbody/child::tr/child::td[4]
     ${lparent}=            GetText                     //td[text()\='Helen Bennett']/parent::tr
     ${lancest}=            GetText                     //td[text()\='Helen Bennett']/ancestor::div                      # Return all div values in the form (i.e. Parent and grand Parent)
+    ${ldesc}=              GetText                     //table[@id='contactList']/descendant::*         # Return child and grand child
     Log                    ${headertext}
     Log                    ${headertext1}
     Log                    ${WText}
@@ -43,6 +44,7 @@ Open wordpress website
     Log                    ${lchildt}
     Log                    ${lparent}
     Log                    ${lancest}
+    Log                    ${ldesc}
 
     Run Keyword If         '${headertext}'=='True'     Test Keyword 1
     ...                    ELSE                        Test keyword 2
