@@ -23,7 +23,7 @@ Open wordpress website
     ${sstartwith}=       GetText    //a[starts-with(text(),'Sign in into')]
     ${snormlize}=       GetText     //label[normalize-space(text())\='First Name']   # Remove front and back spaces  
     ${slast}=           GetText     (//table[@id\='contactList']/tbody/tr)[last()]   # Return last row of the table
-    ${lpostion}=        GetText     (//table[@id\='contactList']/tbody/tr)[position()\=2]  #It works same as index
+    ${lpostion}=        GetText     (//table[@id\='contactList']/tbody/tr)[position()\=2]  #It works same as index with different condition
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
