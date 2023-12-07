@@ -20,10 +20,12 @@ Open wordpress website
     ${headertext1}=      IsElement    //h1[@class\='post-title entry-title1']
     ${WText}=           GetText    //a[text()\='Sign in']
     ${scontain}=        GetText    //a[contains(text(),'account')]
+    ${sstartwith}=       GetText    //a[starts-with(text(),'Sign in into')]
     Log               ${headertext}
     Log               ${headertext1}
     Log               ${WText}
     Log               ${scontain}
+    Log               ${sstartwith}
     
     Run Keyword If    '${headertext}'=='True'    Test Keyword 1
     ...               ELSE                        Test keyword 2
