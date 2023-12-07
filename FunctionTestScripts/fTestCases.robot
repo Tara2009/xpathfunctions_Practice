@@ -38,6 +38,7 @@ Open wordpress website
     Log               ${lpostion}
     Log               ${lfolsibling_par}
     Log               ${lprecesib}
+    Log               ${lchildt}
     
     Run Keyword If    '${headertext}'=='True'    Test Keyword 1
     ...               ELSE                        Test keyword 2
