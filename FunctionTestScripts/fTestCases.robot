@@ -37,7 +37,8 @@ Open wordpress website
     ${lprec}=              GetText                     //label[text()\='Password']/preceding::input[1]         # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
     ${lprecemul}=          GetText                     //label[text()\='Password']/preceding::input            # This is opposite to Following, if we remove [1] return multiple components, here give index (i.e. [1] return single components)
     # Xpath Shortcuts or Abbreviations
-   ${ltexsho}=             GetText                     //h1[.\='Register']                    # Actually syntax is //h1[.\='Register'] we can use dot instead to text to find text in the website
+   ${ltexsho}=             GetText                     //h1[.\='Register']                    # Actually syntax is //h1[.\='Register'] we can use dot instead of text to find text in the website
+   ${ltexcont}=            GetText                     //a[contains(.,'account')]             # Actually //a[contains(text(),'account')] we can use dot instead of text to find text in the website
     Log                    ${headertext}
     Log                    ${headertext1}
     Log                    ${WText}
