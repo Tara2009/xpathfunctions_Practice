@@ -29,9 +29,11 @@ Open wordpress website
     ${lprecesib}=          GetText                     //td[text()\='Germany']/preceding-sibling::td/child::input
     ${lchildt}=            GetText                     //table[@id\='contactList']/child::tbody/child::tr/child::td[4]
     ${lparent}=            GetText                     //td[text()\='Helen Bennett']/parent::tr
-    ${lancest}=            GetText                     //td[text()\='Helen Bennett']/ancestor::div                      # Return all div values in the form (i.e. Parent and grand Parent)
-    ${ldesc}=              GetText                     //table[@id\='contactList']/descendant::*         # Return child and grand child
+    ${lancest}=            GetText                     //td[text()\='Helen Bennett']/ancestor::div             # Return all div values in the form (i.e. Parent and grand Parent)
+    ${ldesc}=              GetText                     //table[@id\='contactList']/descendant::*               # Return child and grand child
     ${lparefoll}=          GetText                     //label[text()\='Password']/parent::div/following-sibling::div[1]/child::input
+    ${lfollwing}=          GetText                     //label[text()\='Password']/following::input[1]         # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
+    ${lfollmul}=           GetText                     //label[text()\='Password']/following::input            # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
     Log                    ${headertext}
     Log                    ${headertext1}
     Log                    ${WText}
@@ -47,6 +49,8 @@ Open wordpress website
     Log                    ${lancest}
     Log                    ${ldesc}
     Log                    ${lparefoll}
+    Log                    ${lfollwing}
+    Log                    ${lfollmul}
 
     Run Keyword If         '${headertext}'=='True'     Test Keyword 1
     ...                    ELSE                        Test keyword 2
