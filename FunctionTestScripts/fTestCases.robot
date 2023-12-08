@@ -34,8 +34,9 @@ Open wordpress website
     ${lparefoll}=          GetText                     //label[text()\='Password']/parent::div/following-sibling::div[1]/child::input
     ${lfollwing}=          GetText                     //label[text()\='Password']/following::input[1]         # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
     ${lfollmul}=           GetText                     //label[text()\='Password']/following::input            # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
-    ${lprec}=          GetText                     //label[text()\='Password']/preceding::input[1]         # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
-    ${lprecemul}=           GetText                     //label[text()\='Password']/preceding::input            # This is opposite to Following, if we remove [1] return multiple components, here give index (i.e. [1] return single components)
+    ${lprec}=              GetText                     //label[text()\='Password']/preceding::input[1]         # if we remove [1] return multiple components, here give index (i.e. [1] return single components)
+    ${lprecemul}=          GetText                     //label[text()\='Password']/preceding::input            # This is opposite to Following, if we remove [1] return multiple components, here give index (i.e. [1] return single components)
+    # Xpath Shortcuts or Abbreviations
     Log                    ${headertext}
     Log                    ${headertext1}
     Log                    ${WText}
