@@ -40,7 +40,9 @@ Open wordpress website
     # text() --> .
     ${ltexsho}=             GetText                     //h1[.\='Register']                    # Actually syntax is : //h1[.\='Register']. Using Shortcut : //h1[.\='Register'] we can use dot instead of text to find text in the website
     ${ltexcont}=            GetText                     //a[contains(.,'account')]             # Actually : //a[contains(text(),'account')]. ussing shortcut : //a[contains(.,'account')]  we can use dot instead of text to find text in the website
-    ${lchildshtcut}=        GetText                     //div[@class='container']/h1          # Actual shortcut for child is "/", //div[@class='container']/child::h1. We can write using shortcut is //div[@class='container']/h1
+    ${lchildshtcut}=        GetText                     //div[@class\='container']/h1          # Actual shortcut for child is "/", //div[@class='container']/child::h1. We can write using shortcut is //div[@class='container']/h1
+    ${lparentShcut}=        GetText                     //h1[.\='Register']/..                 # Actual : //h1[.='Register']/parent , using shortcut : //h1[.='Register']/..
+    ${ldescshcut}=          GetText                     //table[@id\='contactList']//td       # Actual : //table[@id='contactList']/descendant::td , Using Shortcut : //table[@id='contactList']//td
     Log                    ${headertext}
     Log                    ${headertext1}
     Log                    ${WText}
@@ -63,6 +65,8 @@ Open wordpress website
     Log                    ${ltexsho}
     Log                    ${ltexcont}
     Log                    ${lchildshtcut}
+    Log                    ${lparentShcut}
+    Log                    ${ldescshcut}
 
     Run Keyword If         '${headertext}'=='True'     Test Keyword 1
     ...                    ELSE                        Test keyword 2
