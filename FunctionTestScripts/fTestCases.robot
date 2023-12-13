@@ -19,6 +19,7 @@ Open wordpress website
     ${headertext}=         IsElement                   //h1[@class\='post-title entry-title']
     ${headertext1}=        IsElement                   //h1[@class\='post-title entry-title1']
     ${WText}=              GetText                     //a[text()\='Sign in']
+    ClickText              //a[text()\='Sign in']
     ${scontain}=           GetText                     //a[contains(text(),'account')]
     ${sstartwith}=         GetText                     //a[starts-with(text(),'Sign in into')]
     ${snormlize}=          GetText                     //label[normalize-space(text())\='First Name']          # Remove front and back spaces
